@@ -210,8 +210,8 @@ def run_full_analysis(db: Session) -> int:
         peer = peer_results.get(pid, {"score": 0, "deviations": []})
 
         # Fuse
-        risk = fuse_scores(rule["score"], ml["score"], sim["score"], peer["score"])
-        confidence = compute_confidence(p, rule["score"], ml["score"], sim["score"], peer["score"])
+        risk = float(fuse_scores(rule["score"], ml["score"], sim["score"], peer["score"]))
+        confidence = float(compute_confidence(p, rule["score"], ml["score"], sim["score"], peer["score"]))
         why = build_why_flagged(
             rule["reasons"], ml.get("is_anomaly", False),
             sim.get("similar_projects", []), peer.get("deviations", []),
@@ -219,10 +219,10 @@ def run_full_analysis(db: Session) -> int:
 
         ra = RiskAssessment(
             project_id=p.id,
-            rule_score=round(rule["score"], 2),
-            ml_anomaly_score=round(ml["score"], 2),
-            similarity_score=round(sim["score"], 2),
-            peer_score=round(peer["score"], 2),
+            rule_score=float(round(rule["score"], 2)),
+            ml_anomaly_score=float(round(ml["score"], 2)),
+            similarity_score=float(round(sim["score"], 2)),
+            peer_score=float(round(peer["score"], 2)),
             risk_score=risk,
             confidence_score=confidence,
             why_flagged=json.dumps(why),
@@ -252,12 +252,12 @@ def run_full_analysis(db: Session) -> int:
             project_id=p.id,
             project_code=p.project_id,
             risk_score=risk,
-            rule_score=round(rule["score"], 2),
-            ml_anomaly_score=round(ml["score"], 2),
-            similarity_score=round(sim["score"], 2),
-            peer_score=round(peer["score"], 2),
+            rule_score=float(round(rule["score"], 2)),
+            ml_anomaly_score=float(round(ml["score"], 2)),
+            similarity_score=float(round(sim["score"], 2)),
+            peer_score=float(round(peer["score"], 2)),
             confidence_score=confidence,
-            delta_from_previous=round(delta, 2) if prev_snapshot else None,
+            delta_from_previous=float(round(delta, 2)) if prev_snapshot else None,
             is_change_point=is_change_point,
             snapshot_at=datetime.utcnow(),
         )
