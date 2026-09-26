@@ -6,6 +6,7 @@ pydantic-settings==2.7.1
 
 # Database
 sqlalchemy==2.0.36
+psycopg2-binary==2.9.9
 
 # Data & ML
 pandas==2.2.3
