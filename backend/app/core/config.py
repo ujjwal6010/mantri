@@ -4,6 +4,8 @@ Loads from environment variables / .env file.
 """
 
 from pydantic_settings import BaseSettings
+from pydantic import field_validator
+from typing import Union
 from pathlib import Path
 
 
@@ -16,12 +18,22 @@ class Settings(BaseSettings):
     DATABASE_URL: str = "sqlite:///./mantri_drishti.db"
 
     # CORS — allow React dev server
-    CORS_ORIGINS: list[str] = [
+    CORS_ORIGINS: Union[str, list[str]] = [
         "http://localhost:3000",
         "http://localhost:5173",
         "http://127.0.0.1:3000",
         "http://127.0.0.1:5173",
     ]
+
+    @field_validator("CORS_ORIGINS", mode="before")
+    @classmethod
+    def assemble_cors_origins(cls, v: Union[str, list[str]]) -> list[str]:
+        if isinstance(v, str) and not v.startswith("["):
+            return [i.strip() for i in v.split(",") if i.strip()]
+        elif isinstance(v, str):
+            import json
+            return json.loads(v)
+        return v
 
     # Paths
     BASE_DIR: Path = Path(__file__).resolve().parent.parent.parent
