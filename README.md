@@ -10,6 +10,8 @@ An AI-powered risk intelligence platform for MPLADS (Member of Parliament Local 
 ![React](https://img.shields.io/badge/React-19-61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178C6)
 
+**Deployment Link:** [https://mantri-inky.vercel.app/](https://mantri-inky.vercel.app/)
+
 | Field | Details |
 |---|---|
 | **Hackathon** | Smart India Hackathon 2026 |
@@ -167,6 +169,11 @@ python -m venv .venv
 # Install dependencies
 pip install -r requirements.txt
 
+# (Optional) For Production Database:
+# Create a .env file in the backend folder and add your PostgreSQL URL:
+# MD_DATABASE_URL="postgresql://user:password@host:port/db"
+# (If omitted, the system defaults to a local SQLite database)
+
 # Generate synthetic data + seed database + run intelligence engines
 python generate_data.py
 python seed.py
@@ -239,7 +246,7 @@ Disclaimer: Risk signals for human verification. Not proof of fraud.
 
 | Layer | Technology |
 |---|---|
-| **Backend** | Python 3.10+, FastAPI 0.115, SQLAlchemy 2.0, SQLite |
+| **Backend** | Python 3.10+, FastAPI 0.115, SQLAlchemy 2.0, PostgreSQL (Supabase) / SQLite |
 | **ML / Analytics** | scikit-learn (Isolation Forest), Pandas, NumPy |
 | **Frontend** | React 19, TypeScript 6, Vite 8, Plotly.js, D3.js |
 | **Maps** | Leaflet, React-Leaflet |
