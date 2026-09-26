@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { X, Eye, Shield, Terminal, Activity, FileDigit, Cpu, Users } from 'lucide-react';
 
 interface AboutModalProps {
@@ -102,7 +102,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ onClose, isBackendLive }
                 <p className="term-line">
                   <span className="term-prompt">$</span> status: 
                   <span className={`term-status ${isBackendLive ? 'live' : 'offline'}`}>
-                    {isBackendLive ? ' ACTIVE (http://127.0.0.1:8000)' : ' OFFLINE (Using Demo Dataset)'}
+                    {isBackendLive ? ` ACTIVE (${import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'})` : ' OFFLINE (Using Demo Dataset)'}
                   </span>
                 </p>
                 {!isBackendLive && (
