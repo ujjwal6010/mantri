@@ -47,3 +47,7 @@ graphify-out/
 .cursor/
 .gemini/
 .claude/
+
+# Private docs
+docs/walkthrough.md
+docs/script.md
