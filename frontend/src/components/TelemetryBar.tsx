@@ -309,7 +309,7 @@ export const TelemetryBar: React.FC<TelemetryBarProps> = ({
           <div className="hero-bg-fade" />
         </div>
         <div className="hero-left">
-          <p className="hero-greeting">Welcome back, Admin 👋</p>
+          <p className="hero-greeting">Welcome back, Admin</p>
           <h1 className="hero-title">
             Monitor MPLADS. <span className="hero-title-accent">Enable Impact.</span>
           </h1>
