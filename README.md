@@ -145,10 +145,10 @@ The dashboard groups Risk Scores into four bands: Low (0–39), Medium (40–59)
 | `GET` | `/projects/{id}` | Full project detail with fingerprint features |
 | `GET` | `/projects/{id}/risk` | Risk score breakdown by engine, plus "Why Flagged" |
 | `GET` | `/projects/{id}/dossier` | Full investigation dossier with evidence and verification steps |
-| `GET` | `/projects/{id}/risk-trajectory` | Historical risk scores and velocity over time |
-| `GET` | `/projects/{id}/residual-anomaly` | Contextual baseline vs unexplained residual risk |
-| `GET` | `/entities/graph` | Full force-directed entity network data |
-| `GET` | `/monitoring/gaming-detection` | Projects suspected of gaming the monitoring system |
+| `GET` | `/v3/projects/{id}/risk-trajectory` | Historical risk scores and velocity over time |
+| `GET` | `/v3/projects/{id}/residual-anomaly` | Contextual baseline vs unexplained residual risk |
+| `GET` | `/v3/entities/graph` | Full force-directed entity network data |
+| `GET` | `/v3/monitoring/gaming-detection` | Projects suspected of gaming the monitoring system |
 
 ---
 
