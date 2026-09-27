@@ -62,7 +62,7 @@ obots.txt, custom 404 handling, and canonical links.
 ![GIS Risk Map](docs/screenshots/gis_map.png)
 
 ### Entity Graph & Gaming Detection: D3 Network Intelligence
-![Entity Graph](docs/screenshots/entity_graph.png)
+![Entity Graph](docs/screenshots/dashboard_entity_graph.png)
 
 ---
 
