@@ -168,11 +168,10 @@ export const EntityGraph: React.FC = () => {
         </div>
       </div>
       
-      {loading ? (
+      {loading && (
         <div className="entity-graph-loading">Analyzing network...</div>
-      ) : (
-        <svg ref={svgRef} className="entity-graph-svg"></svg>
       )}
+      <svg ref={svgRef} className="entity-graph-svg" style={{ display: loading ? 'none' : 'block' }}></svg>
     </div>
   );
 };
