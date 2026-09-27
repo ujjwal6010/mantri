@@ -5447,3 +5447,37 @@ html[data-theme="dark"] .sidebar {
 .dossier-full-action-btn:hover {
   background: var(--surface-hover);
 }
+/* Analytics Pills */
+.state-pills, .sector-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px 20px;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-app);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+.state-pill, .sector-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.state-pill:hover, .sector-pill:hover {
+  background: #eff6ff;
+  color: #3b82f6;
+  border-color: #bfdbfe;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
