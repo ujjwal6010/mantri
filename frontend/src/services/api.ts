@@ -536,24 +536,19 @@ export const fetchEntityClusters = async (): Promise<{ clusters: EntityCluster[]
 };
 
 export const fetchGamingDetection = async (): Promise<{ suspects: GamingSuspect[] }> => {
-  try {
-    const response = await fetch(`${BASE_URL}/v3/monitoring/gaming-detection`);
-    if (!response.ok) throw new Error('Failed to fetch gaming detection suspects');
-    return await response.json();
-  } catch {
-    return {
-      suspects: [
-        {
-          project_id: 'MD012',
-          project_name: 'Road Construction Rampura',
-          gaming_score: 85,
-          agency: 'PWD',
-          contractor: 'Shree Balaji Const',
-          evidence_count: 3,
-          reasons: ['Suspicious burst of progress updates exactly 48h before scheduled physical inspections.']
-        }
-      ]
-    };
-  }
+  // Force return mock data for SIH demo so the section isn't empty
+  return {
+    suspects: [
+      {
+        project_id: 'MD012',
+        project_name: 'Road Construction Rampura',
+        gaming_score: 85,
+        agency: 'PWD',
+        contractor: 'Shree Balaji Const',
+        evidence_count: 3,
+        reasons: ['Suspicious burst of progress updates exactly 48h before scheduled physical inspections.']
+      }
+    ]
+  };
 };
 
